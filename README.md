@@ -1,1 +1,704 @@
-# ao
+<!DOCTYPE html>
+<html lang="pt-AO" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yannick Alberto Constantino Mateus — Consultor de TI & Engenharia de Software</title>
+    
+    <!-- Meta Tags Executivas para SEO -->
+    <meta name="description" content="Portal Executivo de Yannick Alberto Constantino Mateus. Consultoria Estratégica de TI, Engenharia de Software, Desenvolvimento Web e Segurança Digital.">
+    <meta name="keywords" content="Yannick Mateus, Consultor de TI Angola, Engenharia de Software, Desenvolvimento Web Luanda, Segurança Digital">
+    <meta name="author" content="Yannick Alberto Constantino Mateus">
+
+    <!-- Open Graph / Redes Sociais (WhatsApp, LinkedIn, X) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Yannick Alberto Constantino Mateus — Consultor de TI & Engenheiro de Software">
+    <meta property="og:description" content="DISCIPLINA • FOCO • FÉ • AÇÃO — Soluções tecnológicas estratégicas e engenharia de software corporativa.">
+    <meta property="og:image" content="1000483520.jpg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandNavy: '#002b5c',
+                        brandNavyDark: '#001d3f',
+                        brandGold: '#d4af37',
+                        brandGoldHover: '#b89528',
+                        brandBg: '#f8fafc',
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 25px -5px rgba(212, 175, 55, 0.3)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Font Awesome 6 CDN (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts Premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+        h1, h2, h3, .font-serif-custom {
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Gradiente Dourado Metálico */
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b89528 100%);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #b89528 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Efeito Shimmer de Brilho nos Botões */
+        .btn-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transform: rotate(30deg) translateX(-100%);
+            transition: transform 0.8s ease;
+        }
+        .btn-shimmer:hover::after {
+            transform: rotate(30deg) translateX(100%);
+        }
+
+        /* Link Ativo do ScrollSpy */
+        .nav-link.active {
+            color: #d4af37;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-brandBg text-slate-800 antialiased selection:bg-brandGold selection:text-brandNavy">
+
+    <!-- CABEÇALHO COM GLASSMORPHISM -->
+    <header id="header" class="fixed top-0 left-0 w-full bg-brandNavy/95 backdrop-blur-md text-white z-50 transition-all duration-300 border-b border-brandGold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo / Identidade -->
+            <a href="#home" class="flex flex-col group">
+                <span class="font-serif-custom text-lg sm:text-xl font-bold tracking-wider text-white group-hover:text-brandGold transition-colors">YANNICK MATEUS</span>
+                <span class="text-[9px] sm:text-[10px] tracking-widest text-brandGold uppercase font-semibold">Consultor de TI & Engenharia de Software</span>
+            </a>
+
+            <!-- Menu Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="nav-link text-slate-200 hover:text-brandGold transition-colors">Home</a>
+                <a href="#sobre" class="nav-link text-slate-200 hover:text-brandGold transition-colors">Sobre Mim</a>
+                <a href="#servicos" class="nav-link text-slate-200 hover:text-brandGold transition-colors">Serviços</a>
+                <a href="#portfolio" class="nav-link text-slate-200 hover:text-brandGold transition-colors">Portfólio</a>
+                <a href="#blog" class="nav-link text-slate-200 hover:text-brandGold transition-colors">Blog</a>
+                <a href="#contacto" class="nav-link text-slate-200 hover:text-brandGold transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA Executivo com WhatsApp -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="https://wa.me/244923529486" target="_blank" rel="noopener" class="text-xs font-semibold text-slate-200 hover:text-brandGold flex items-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i>
+                    <span>+244 923 529 486</span>
+                </a>
+                <a href="#contacto" class="btn-shimmer gold-gradient-bg text-brandNavy font-bold px-5 py-2.5 rounded shadow-md hover:shadow-gold-glow transition-all text-xs tracking-wider uppercase flex items-center gap-2">
+                    <span>Solicite Proposta</span>
+                    <i class="fa-solid fa-paper-plane text-[10px]"></i>
+                </a>
+            </div>
+
+            <!-- Menu Mobile Hamburger Button -->
+            <button id="menuBtn" aria-label="Abrir Menu" class="md:hidden text-white text-2xl focus:outline-none p-2">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-brandNavyDark border-t border-brandGold/20 px-6 py-6 space-y-4 text-center">
+            <a href="#home" class="block text-white hover:text-brandGold font-medium transition-colors">Home</a>
+            <a href="#sobre" class="block text-white hover:text-brandGold font-medium transition-colors">Sobre Mim</a>
+            <a href="#servicos" class="block text-white hover:text-brandGold font-medium transition-colors">Serviços</a>
+            <a href="#portfolio" class="block text-white hover:text-brandGold font-medium transition-colors">Portfólio</a>
+            <a href="#blog" class="block text-white hover:text-brandGold font-medium transition-colors">Blog</a>
+            <a href="#contacto" class="block text-white hover:text-brandGold font-medium transition-colors">Contacto</a>
+            <a href="https://wa.me/244923529486" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 text-emerald-400 font-bold text-sm w-full py-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>+244 923 529 486</span>
+            </a>
+            <a href="#contacto" class="inline-block w-full gold-gradient-bg text-brandNavy font-bold py-3 rounded text-xs uppercase tracking-wider mt-2">Solicite Proposta</a>
+        </div>
+    </header>
+
+    <!-- BANNER INICIAL / HERO -->
+    <section id="home" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-brandNavy via-brandNavy to-brandNavyDark text-white relative overflow-hidden">
+        <!-- Luzes e Efeitos de Fundo -->
+        <div class="absolute top-1/4 right-10 w-96 h-96 bg-brandGold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
+            
+            <!-- Conteúdo Principal Hero -->
+            <div class="flex-1 space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-brandGold/10 border border-brandGold/30 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-brandGold animate-pulse"></span>
+                    <span class="text-brandGold text-xs font-semibold tracking-wider uppercase">Consultoria de Elite & Engenharia</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                    Yannick Alberto <br>
+                    <span class="gold-gradient-text">Constantino Mateus</span>
+                </h1>
+                
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+                    Especialista em arquitetura de sistemas, modernização de infraestrutura de TI e desenvolvimento de ecossistemas digitais de alta segurança e performance.
+                </p>
+
+                <!-- Citação Motivacional -->
+                <div class="p-5 rounded-xl bg-white/5 border-l-4 border-brandGold backdrop-blur-md my-6 text-left shadow-lg">
+                    <p class="text-brandGold font-bold text-xs sm:text-sm tracking-widest uppercase">
+                        DISCIPLINA • FOCO • FÉ • AÇÃO
+                    </p>
+                    <p class="text-slate-200 text-xs sm:text-sm italic mt-1 font-light">
+                        “É assim que os sonhos se tornam realidade.”
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
+                    <a href="https://wa.me/244923529486" target="_blank" rel="noopener" class="btn-shimmer bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-3.5 rounded shadow-lg transition-all text-sm tracking-wide text-center flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Falar no WhatsApp</span>
+                    </a>
+                    <a href="#contacto" class="border border-brandGold/60 text-brandGold hover:bg-brandGold hover:text-brandNavy font-semibold px-8 py-3.5 rounded transition-all text-sm tracking-wide text-center">
+                        Solicitar Proposta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Moldura e Imagem Promocional Executiva -->
+            <div class="flex-1 flex justify-center">
+                <div class="relative w-full max-w-md group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-brandGold to-amber-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+                    <div class="relative rounded-2xl overflow-hidden border-2 border-brandGold/50 shadow-2xl bg-brandNavy">
+                        <img src="1000483520.jpg" alt="Yannick Alberto Constantino Mateus em terno vermelho" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- METRICAS DE IMPACTO -->
+    <section class="bg-brandNavyDark text-white py-8 border-y border-brandGold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-2">
+                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text">100%</span>
+                    <span class="text-xs text-slate-400 font-medium">Foco em Resultados</span>
+                </div>
+                <div class="p-2">
+                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text">Segurança</span>
+                    <span class="text-xs text-slate-400 font-medium">Padrões Corporativos</span>
+                </div>
+                <div class="p-2">
+                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text">Full-Stack</span>
+                    <span class="text-xs text-slate-400 font-medium">Arquitetura de Software</span>
+                </div>
+                <div class="p-2">
+                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text">Estratégia</span>
+                    <span class="text-xs text-slate-400 font-medium">Consultoria de TI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE MIM -->
+    <section id="sobre" class="py-20 bg-brandBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Sobre Mim</h2>
+                <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-brandNavy">Liderança Técnica & Excelência em Engenharia</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Sou **Yannick Alberto Constantino Mateus**, consultor de tecnologia da informação e engenheiro de software dedicado a alinhar soluções técnicas aos mais rigorosos objetivos estratégicos de negócios.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
+                        Com sólida atuação no desenvolvimento web, segurança de redes e automação de processos, auxilio organizações na transição digital segura e na construção de plataformas resilientes e preparadas para escalabilidade.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 bg-white rounded-lg shadow-sm border-l-4 border-brandGold">
+                            <i class="fa-solid fa-diagram-project text-brandNavy mb-2 text-xl"></i>
+                            <span class="block font-bold text-brandNavy text-sm">Arquitetura Limpa</span>
+                            <span class="text-[11px] text-slate-500">Sistemas sustentáveis e manuteníveis</span>
+                        </div>
+                        <div class="p-4 bg-white rounded-lg shadow-sm border-l-4 border-brandGold">
+                            <i class="fa-solid fa-lock text-brandNavy mb-2 text-xl"></i>
+                            <span class="block font-bold text-brandNavy text-sm">Proteção de Dados</span>
+                            <span class="text-[11px] text-slate-500">Conformidade e segurança contínua</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brandNavy text-white p-8 sm:p-10 rounded-2xl shadow-xl relative overflow-hidden">
+                    <i class="fa-solid fa-quote-right text-brandGold/15 text-8xl absolute -top-4 -right-4 pointer-events-none"></i>
+                    <h4 class="text-xl font-bold text-brandGold mb-4 relative z-10">Visão Estratégica</h4>
+                    <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-6 italic relative z-10">
+                        "Tecnologia só cumpre o seu verdadeiro propósito quando resolve problemas reais do negócio com máxima simplicidade, eficiência e segurança."
+                    </p>
+                    <ul class="space-y-3.5 text-xs sm:text-sm text-slate-300 relative z-10">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Consultoria Executiva e Alinhamento Estratégico
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Engenharia e Desenvolvimento de Software Sob Medida
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-brandGold"></i> Auditoria de Infraestrutura & Segurança Digital
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SERVIÇOS -->
+    <section id="servicos" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Serviços Especializados</h2>
+                <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
+                <p class="text-slate-600 mt-4 text-sm">Capacidades técnicas e estratégicas focadas no crescimento do seu negócio.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Cartão 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-6 text-2xl">
+                            <i class="fa-solid fa-briefcase text-brandGold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandNavy mb-3">Consultoria de TI</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                            Diagnóstico de maturidade tecnológica, planejamento de transformação digital e otimização de custos com infraestrutura.
+                        </p>
+                    </div>
+                    <a href="#contacto" class="text-xs font-bold text-brandNavy hover:text-brandGold uppercase tracking-wider flex items-center gap-2">
+                        Solicitar Diagnóstico <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Cartão 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-6 text-2xl">
+                            <i class="fa-solid fa-code text-brandGold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandNavy mb-3">Desenvolvimento Web</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                            Desenvolvimento de plataformas Web institucionais, sistemas de e-commerce e portais customizados e responsivos.
+                        </p>
+                    </div>
+                    <a href="#contacto" class="text-xs font-bold text-brandNavy hover:text-brandGold uppercase tracking-wider flex items-center gap-2">
+                        Solicitar Projeto <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Cartão 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-6 text-2xl">
+                            <i class="fa-solid fa-shield-halved text-brandGold"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-brandNavy mb-3">Segurança Digital</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                            Avaliação de vulnerabilidades, implementação de firewalls, encriptação e protocolos avançados de proteção contra ameaças.
+                        </p>
+                    </div>
+                    <a href="#contacto" class="text-xs font-bold text-brandNavy hover:text-brandGold uppercase tracking-wider flex items-center gap-2">
+                        Solicitar Avaliação <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PORTFÓLIO -->
+    <section id="portfolio" class="py-20 bg-brandBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Portfólio de Projetos</h2>
+                <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
+                <p class="text-slate-600 mt-4 text-sm">Casos de sucesso e plataformas institucionais desenvolvidas com elevado padrão técnico.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Projeto 1: VFino -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 flex flex-col justify-between hover:border-brandGold transition-all duration-300 group">
+                    <div class="bg-brandNavy p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-2xl font-serif-custom text-brandGold font-bold tracking-widest z-10">VFINO</span>
+                        <span class="text-[10px] text-slate-300 uppercase tracking-widest mt-1 z-10">E-Commerce & Retail</span>
+                        <div class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-400/30">
+                            Ativo
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-brandNavy">VFino Store</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mt-2">
+                                Loja virtual completa com painel de gestão administrativa e integração de pagamentos e vitrine de produtos.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">PHP</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">MySQL</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">E-Commerce</span>
+                        </div>
+                        <a href="https://vfino.ao" target="_blank" rel="noopener" class="inline-flex items-center justify-between w-full text-xs text-brandNavy font-bold pt-2 border-t border-slate-100 group-hover:text-brandGold transition-colors">
+                            <span>Visitar vfino.ao</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projeto 2: Luís Pedro -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 flex flex-col justify-between hover:border-brandGold transition-all duration-300 group">
+                    <div class="bg-brandNavy p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-2xl font-serif-custom text-white font-bold tracking-wider z-10">LUÍS PEDRO</span>
+                        <span class="text-[10px] text-brandGold uppercase tracking-widest mt-1 z-10">Despachos Aduaneiros</span>
+                        <div class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-400/30">
+                            Ativo
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-brandNavy">Luís Pedro Despachantes</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mt-2">
+                                Portal executivo para apresentação de serviços de desembaraço aduaneiro, logística e consultoria de importação/exportação.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Web Corporate</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">UI/UX</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Logística</span>
+                        </div>
+                        <a href="https://luispedro.ao" target="_blank" rel="noopener" class="inline-flex items-center justify-between w-full text-xs text-brandNavy font-bold pt-2 border-t border-slate-100 group-hover:text-brandGold transition-colors">
+                            <span>Visitar luispedro.ao</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projeto 3: Cláudio Coragem -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 flex flex-col justify-between hover:border-brandGold transition-all duration-300 group">
+                    <div class="bg-brandNavy p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-2xl font-serif-custom text-brandGold font-bold tracking-wider z-10">CLÁUDIO CORAGEM</span>
+                        <span class="text-[10px] text-slate-300 uppercase tracking-widest mt-1 z-10">Despachante Oficial</span>
+                        <div class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-400/30">
+                            Ativo
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-brandNavy">Cláudio Coragem Despachantes</h3>
+                            <p class="text-slate-600 text-xs leading-relaxed mt-2">
+                                Plataforma digital otimizada para consulta de credenciais institucionais e canal direto de atendimento a clientes.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5">
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Landing Page</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">SEO</span>
+                            <span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded">Aduaneiro</span>
+                        </div>
+                        <a href="https://claudiocoragem.ao" target="_blank" rel="noopener" class="inline-flex items-center justify-between w-full text-xs text-brandNavy font-bold pt-2 border-t border-slate-100 group-hover:text-brandGold transition-colors">
+                            <span>Visitar claudiocoragem.ao</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO BLOG & INSIGHTS (OTIMIZADO SEO) -->
+    <section id="blog" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Blog & Insights</h2>
+                <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
+                <p class="text-slate-600 mt-4 text-sm">Artigos analíticos sobre Tecnologia da Informação, Geopolítica e Mercados Financeiros.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Artigo 1 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-brandGold uppercase tracking-widest bg-brandNavy/10 px-3 py-1 rounded-full">Tecnologia & TI</span>
+                        <h3 class="text-base font-bold text-brandNavy mt-4 mb-2 hover:text-brandGold transition-colors cursor-pointer">
+                            Modernização de Sistemas Legados: Desafios e Estratégias em 2026
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Uma análise prática sobre migração para nuvem, microsserviços e redução de débitos técnicos em ambientes corporativos.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400">Leitura: 5 min</span>
+                        <a href="#contacto" class="text-xs text-brandNavy font-bold hover:text-brandGold">Ler Artigo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Artigo 2 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-brandGold uppercase tracking-widest bg-brandNavy/10 px-3 py-1 rounded-full">Geopolítica</span>
+                        <h3 class="text-base font-bold text-brandNavy mt-4 mb-2 hover:text-brandGold transition-colors cursor-pointer">
+                            Soberania Digital e Cibersegurança em Economias Emergentes
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Como o cenário geopolítico global está a moldar os regulamentos de proteção de dados e a infraestrutura de rede local.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400">Leitura: 7 min</span>
+                        <a href="#contacto" class="text-xs text-brandNavy font-bold hover:text-brandGold">Ler Artigo &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Artigo 3 -->
+                <article class="bg-white rounded-2xl overflow-hidden shadow border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow">
+                    <div class="p-6">
+                        <span class="text-[10px] font-bold text-brandGold uppercase tracking-widest bg-brandNavy/10 px-3 py-1 rounded-full">Mercados Financeiros</span>
+                        <h3 class="text-base font-bold text-brandNavy mt-4 mb-2 hover:text-brandGold transition-colors cursor-pointer">
+                            O Impacto do Blockchain e Smart Contracts nas Finanças do Futuro
+                        </h3>
+                        <p class="text-slate-600 text-xs leading-relaxed">
+                            Como redes distribuídas e contratos inteligentes reduzem intermediários e elevam a transparência nas transações.
+                        </p>
+                    </div>
+                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[11px] text-slate-400">Leitura: 6 min</span>
+                        <a href="#contacto" class="text-xs text-brandNavy font-bold hover:text-brandGold">Ler Artigo &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CONTACTO -->
+    <section id="contacto" class="py-20 bg-brandNavy text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- Detalhes de Contacto -->
+                <div class="space-y-6">
+                    <h2 class="text-3xl font-bold uppercase tracking-wide">Entre em Contacto</h2>
+                    <div class="w-16 h-1 bg-brandGold"></div>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Pronto para transformar a infraestrutura tecnológica da sua empresa? Agende uma reunião estratégica ou solicite uma proposta comercial detalhada.
+                    </p>
+
+                    <div class="space-y-5 pt-4">
+                        <!-- Telefone & WhatsApp -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block uppercase font-semibold">Telefone / WhatsApp</span>
+                                <a href="https://wa.me/244923529486" target="_blank" rel="noopener" class="text-sm sm:text-base font-bold text-white hover:text-emerald-400 transition-colors">+244 923 529 486</a>
+                            </div>
+                        </div>
+
+                        <!-- E-mail -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brandGold text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block uppercase font-semibold">E-mail Corporativo</span>
+                                <a href="mailto:consultor.yacm@gmail.com" class="text-sm sm:text-base font-bold text-white hover:text-brandGold transition-colors">consultor.yacm@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <!-- Localização -->
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-brandGold text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 block uppercase font-semibold">Localização</span>
+                                <span class="text-sm sm:text-base font-bold text-white">Luanda, Angola</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulário Interativo de Contacto -->
+                <div class="bg-white text-slate-800 p-8 sm:p-10 rounded-2xl shadow-2xl">
+                    <h3 class="text-2xl font-bold text-brandNavy mb-2">Solicite uma Proposta</h3>
+                    <p class="text-xs text-slate-500 mb-6">Preencha os campos abaixo para receber uma resposta personalizada.</p>
+                    
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nome Completo</label>
+                            <input type="text" id="nome" required placeholder="Ex: João Silva" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-brandNavy focus:ring-1 focus:ring-brandNavy text-sm transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">E-mail de Contacto</label>
+                            <input type="email" id="email" required placeholder="seuemail@empresa.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-brandNavy focus:ring-1 focus:ring-brandNavy text-sm transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Mensagem ou Projeto</label>
+                            <textarea id="mensagem" rows="4" required placeholder="Descreva sucintamente a sua necessidade técnica ou projeto..." class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:outline-none focus:border-brandNavy focus:ring-1 focus:ring-brandNavy text-sm transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" id="submitBtn" class="btn-shimmer w-full gold-gradient-bg text-brandNavy font-bold py-4 rounded-lg shadow-md hover:shadow-gold-glow transition-all text-sm tracking-wider uppercase flex items-center justify-center gap-2">
+                            <span>Solicite uma Proposta</span>
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                        </button>
+                    </form>
+                    
+                    <div id="formAlert" class="hidden mt-4 p-3 bg-emerald-100 text-emerald-800 rounded-lg text-xs font-semibold text-center">
+                        Mensagem enviada com sucesso! Entrarei em contacto brevemente.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ INSTITUCIONAL -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                
+                <div class="text-center md:text-left">
+                    <span class="font-serif-custom text-base sm:text-lg font-bold text-white tracking-wider block">YANNICK ALBERTO CONSTANTINO MATEUS</span>
+                    <span class="text-xs text-slate-500">Consultor de TI & Engenharia de Software | Tel: +244 923 529 486</span>
+                </div>
+
+                <!-- Redes Sociais Executivas -->
+                <div class="flex space-x-5">
+                    <a href="https://wa.me/244923529486" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:text-emerald-400 hover:bg-white/10 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:text-brandGold hover:bg-white/10 transition-all">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" aria-label="GitHub" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:text-brandGold hover:bg-white/10 transition-all">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" aria-label="X/Twitter" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-slate-300 hover:text-brandGold hover:bg-white/10 transition-all">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="border-t border-slate-900 mt-8 pt-8 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Yannick Alberto Constantino Mateus. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS JS -->
+    <script>
+        // Menu Mobile Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Feedback do Formulário
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const alert = document.getElementById('formAlert');
+            const btn = document.getElementById('submitBtn');
+            
+            btn.disabled = true;
+            btn.innerHTML = 'Enviando...';
+
+            setTimeout(() => {
+                alert.classList.remove('hidden');
+                btn.innerHTML = 'Solicite uma Proposta <i class="fa-solid fa-check"></i>';
+                document.getElementById('contactForm').reset();
+            }, 1000);
+        }
+
+        // ScrollSpy para destacar o menu ativo durante a navegação
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll("nav a.nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 120) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLi.forEach((a) => {
+                a.classList.remove("active");
+                if (a.getAttribute("href") === `#${current}`) {
+                    a.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
