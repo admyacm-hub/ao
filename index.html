@@ -530,18 +530,60 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </section>
-    <!-- SEÇÃO CONTACTO -->
-    <section id="contacto" class="py-20 bg-brandNavy text-white relative overflow-hidden">
-        <div class="absolute -top-24 -left-24 w-96 h-96 bg-brandGold/10 rounded-full blur-3xl pointer-events-none"></div>
+    <!-- SEÇÃO DE CONTACTO / INICIAR PROJETO -->
+<section id="contacto" class="py-20 bg-brandNavy">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold text-white uppercase tracking-wide">Iniciar Projeto ou Consultoria</h2>
+            <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
+            <p class="text-slate-300 mt-4 text-sm">Entre em contacto direto para discutir a sua próxima evolução tecnológica.</p>
+        </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-3xl font-bold uppercase tracking-wide">Iniciar Projeto ou Consultoria</h2>
-                <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
-                <p class="text-slate-300 mt-4 text-sm">Entre em contacto direto para discutir a sua próxima evolução tecnológica.</p>
+        <div class="max-w-2xl mx-auto">
+            <div class="bg-brandNavyDark p-8 sm:p-10 rounded-2xl border border-brandGold/30 shadow-2xl">
+                <form action="https://formsubmit.co/consultor.yacm@gmail.com" method="POST" class="space-y-6">
+                    <!-- Configurações Ocultas -->
+                    <input type="hidden" name="_subject" value="Nova Proposta / Contacto via Portfólio Web">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <!-- ESTA É A LINHA QUE MANTÉM O CLIENTE NO SEU SITE -->
+                    <input type="hidden" name="_next" value="https://admyacm-hub.github.io/ao/#contacto">
+
+                    <div>
+                        <label for="nome" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-2">Nome Completo</label>
+                        <input type="text" id="nome" name="Nome" required class="w-full bg-brandNavy border border-brandGold/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandGold transition-colors" placeholder="O seu nome ou da sua empresa">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-2">Email Corporativo / Pessoal</label>
+                        <input type="email" id="email" name="Email" required class="w-full bg-brandNavy border border-brandGold/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandGold transition-colors" placeholder="exemplo@dominio.ao">
+                    </div>
+
+                    <div>
+                        <label for="servico" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-2">Área de Interesse</label>
+                        <select id="servico" name="Area_Interesse" class="w-full bg-brandNavy border border-brandGold/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandGold transition-colors">
+                            <option value="Consultoria de TI">Consultoria de TI</option>
+                            <option value="Desenvolvimento Web / Software">Desenvolvimento Web / Software</option>
+                            <option value="Segurança Digital & Auditoria">Segurança Digital & Auditoria</option>
+                            <option value="Outro Projeto Estratégico">Outro Projeto Estratégico</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="mensagem" class="block text-xs uppercase tracking-wider text-slate-300 font-semibold mb-2">Detalhes da Mensagem</label>
+                        <textarea id="mensagem" name="Mensagem" rows="4" required class="w-full bg-brandNavy border border-brandGold/20 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-brandGold transition-colors" placeholder="Descreva brevemente os objetivos do projeto..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-brandGold text-brandNavy font-bold py-3.5 rounded-lg shadow-lg hover:opacity-90 transition-all text-xs tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer">
+                        <span>Enviar Proposta / Mensagem</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                </form>
             </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        </div>
+    </div>
+</section>
                 
                 <!-- Informações de Contacto -->
                 <div class="space-y-8">
