@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soberania Digital e Cibersegurança em Economias Emergentes</title>
+    <title>Soberania Digital e Cibersegurança em Economias Emergentes | Blog & Insights</title>
+    <meta name="description" content="Análise estratégica para CEOs e CISOs sobre a geopolítica de dados, infraestruturas críticas e o dilema regulatório em economias emergentes.">
     <style>
         :root {
             --primary-navy: #0F172A;
             --secondary-navy: #1E293B;
             --gold-accent: #C59B27;
+            --gold-hover: #D4A82F;
             --gold-light: #FBF7EC;
             --bg-color: #F8FAFC;
             --card-bg: #FFFFFF;
@@ -17,56 +19,154 @@
             --border-color: #E2E8F0;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: var(--bg-color); color: var(--text-main); line-height: 1.7; }
+        
+        /* Reading Progress Bar */
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background-color: var(--gold-accent);
+            width: 0%;
+            z-index: 1000;
+            transition: width 0.1s ease-out;
+        }
+
         .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
         article.insight-card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 50px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); position: relative; }
         article.insight-card::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 6px; background-color: var(--gold-accent); border-top-left-radius: 8px; border-top-right-radius: 8px; }
+        
         .article-category { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold-accent); font-weight: 700; margin-bottom: 10px; }
         h2.article-title { font-size: 1.85rem; color: var(--primary-navy); margin-bottom: 15px; line-height: 1.3; }
-        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); display: flex; gap: 20px; }
+        .article-meta { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 30px; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); display: flex; gap: 20px; flex-wrap: wrap; }
+        
+        /* Table of Contents */
+        .table-of-contents { background-color: var(--bg-color); border: 1px solid var(--border-color); border-radius: 6px; padding: 20px 25px; margin-bottom: 30px; }
+        .table-of-contents h4 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary-navy); margin-bottom: 10px; }
+        .table-of-contents ul { padding-left: 20px; margin-bottom: 0; }
+        .table-of-contents li { font-size: 0.95rem; margin-bottom: 5px; }
+        .table-of-contents a { color: var(--primary-navy); text-decoration: none; transition: color 0.2s ease; }
+        .table-of-contents a:hover { color: var(--gold-accent); text-decoration: underline; }
+
         .executive-summary { background-color: var(--gold-light); border-left: 4px solid var(--gold-accent); padding: 20px 25px; margin-bottom: 35px; border-radius: 0 6px 6px 0; }
         .executive-summary h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--primary-navy); margin-bottom: 8px; }
-        .executive-summary p { font-size: 0.95rem; color: var(--text-main); font-style: italic; }
+        .executive-summary p { font-size: 0.95rem; color: var(--text-main); font-style: italic; margin-bottom: 0; }
+        
         h3.section-heading { font-size: 1.3rem; color: var(--primary-navy); margin-top: 30px; margin-bottom: 15px; font-weight: 600; }
         p { margin-bottom: 20px; font-size: 1.05rem; }
         ul { margin-bottom: 20px; padding-left: 20px; }
         li { margin-bottom: 10px; font-size: 1.025rem; }
         li strong { color: var(--primary-navy); }
+        
         .cta-box { background-color: var(--primary-navy); color: #FFFFFF; padding: 25px 30px; border-radius: 6px; margin-top: 40px; text-align: center; }
         .cta-box p { margin-bottom: 15px; font-size: 1.05rem; color: #E2E8F0; }
-        .cta-button { display: inline-block; background-color: var(--gold-accent); color: var(--primary-navy); font-weight: 700; padding: 12px 25px; border-radius: 4px; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.05em; }
-        .cta-button:hover { background-color: #D4A82F; }
+        .cta-button { display: inline-block; background-color: var(--gold-accent); color: var(--primary-navy); font-weight: 700; padding: 12px 25px; border-radius: 4px; text-decoration: none; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 0.05em; transition: background-color 0.2s ease, transform 0.1s ease; }
+        .cta-button:hover { background-color: var(--gold-hover); transform: translateY(-1px); }
+        
+        .footer-nav { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .back-link { color: var(--primary-navy); text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 8px; transition: color 0.2s ease; }
+        .back-link:hover { color: var(--gold-accent); }
+
+        /* Back to Top Floating Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            border: 2px solid var(--gold-accent);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
+            z-index: 999;
+            text-decoration: none;
+        }
+        #back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #back-to-top:hover {
+            background-color: var(--gold-accent);
+            color: var(--primary-navy);
+        }
     </style>
 </head>
 <body>
+    <div id="progress-bar"></div>
     <div class="container">
         <article class="insight-card">
-            <div class="article-category">Geopolítica</div>
+            <div class="article-category">Geopolítica & Estratégia</div>
             <h2 class="article-title">Soberania Digital e Cibersegurança em Economias Emergentes</h2>
             <div class="article-meta">
                 <span>⏱️ Tempo de leitura: 7 min</span>
                 <span>🎯 Foco: CEOs, Diretores de Relações Institucionais e CISOs</span>
             </div>
+
             <div class="executive-summary">
                 <h3>Resumo Executivo</h3>
                 <p>A fragmentação da internet global e o endurecimento das leis de proteção de dados redefiniram o comércio internacional. Para economias emergentes, o equilíbrio entre soberania digital e atração de investimentos exige infraestruturas resilientes e defesas cibernéticas nacionais.</p>
             </div>
-            <h3 class="section-heading">1. O Novo Cenário da Geopolítica de Dados</h3>
+
+            <nav class="table-of-contents">
+                <h4>Navegação Rápida</h4>
+                <ul>
+                    <li><a href="#secao-1">1. O Novo Cenário da Geopolítica de Dados</a></li>
+                    <li><a href="#secao-2">2. Infraestrutura Crítica e Vulnerabilidades Locais</a></li>
+                    <li><a href="#secao-3">3. O Dilema Regulatório: Proteção vs. Inovação</a></li>
+                </ul>
+            </nav>
+
+            <h3 id="secao-1" class="section-heading">1. O Novo Cenário da Geopolítica de Dados</h3>
             <p>A soberania digital consolidou-se como diretriz de segurança nacional. Governos implementam regulamentações severas de fluxo transfronteiriço. Proteger os dados atrai confiança local, mas o protecionismo excessivo pode isolar ecossistemas de inovação e encarecer operações globais.</p>
-            <h3 class="section-heading">2. Infraestrutura Crítica e Vulnerabilidades Locais</h3>
+            
+            <h3 id="secao-2" class="section-heading">2. Infraestrutura Crítica e Vulnerabilidades Locais</h3>
             <p>A digitalização em países em desenvolvimento escancarou vulnerabilidades. A dependência de infraestruturas de nuvem e hardware estrangeiros gera riscos geopolíticos latentes, expondo nações a ataques híbridos e espionagem industrial.</p>
-            <h3 class="section-heading">3. O Dilema Regulatório: Proteção vs. Inovação</h3>
+            
+            <h3 id="secao-3" class="section-heading">3. O Dilema Regulatório: Proteção vs. Inovação</h3>
             <p>Os países que obtêm maior sucesso adotam governança modular:</p>
             <ul>
                 <li><strong>Sandboxes Regulatórios:</strong> Ambientes controlados para testar inovações tecnológicas.</li>
                 <li><strong>Parcerias Público-Privadas (PPPs):</strong> Investimento conjunto em cibersegurança e SOCs.</li>
                 <li><strong>Alinhamento a Padrões Globais:</strong> Adaptação de frameworks internacionais ao contexto local.</li>
             </ul>
+            
             <div class="cta-box">
                 <p>O futuro das economias emergentes depende da capacidade de blindar fronteiras digitais sem fechar portas para o capital global.</p>
-                <a href="#contato" class="cta-button">Conheça nossa consultoria regulatória</a>
+                <a href="https://wa.me/244923529486?text=Olá,%20quero%20agendar%20uma%20sessão%20sobre%20soberania%20digital%20e%20cibersegurança." class="cta-button" target="_blank" rel="noopener noreferrer">Conheça nossa consultoria regulatória</a>
+            </div>
+            
+            <div class="footer-nav">
+                <a href="index.html#blog" class="back-link">← Voltar ao Blog & Insights</a>
             </div>
         </article>
     </div>
+
+    <a href="#" id="back-to-top" title="Voltar ao topo">↑</a>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (winScroll > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+    </script>
 </body>
 </html>
