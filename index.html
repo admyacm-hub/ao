@@ -246,21 +246,25 @@
             transform: translateY(0);
         }
 
-        /* FAQ accordion */
+        /* FAQ accordion (corrigido) */
         .faq-answer {
-            max-height: 0;
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s ease;
+        }
+        .faq-answer > div {
             overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.4s ease;
         }
         .faq-item.open .faq-answer {
-            max-height: 400px;
-            padding-top: 12px;
-        }
-        .faq-item.open .faq-chevron {
-            transform: rotate(180deg);
+            grid-template-rows: 1fr;
         }
         .faq-chevron {
             transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 1rem;
+        }
+        .faq-item.open .faq-chevron {
+            transform: rotate(180deg);
         }
 
         /* Toast */
@@ -384,7 +388,7 @@
                     <i class="fa-brands fa-whatsapp text-emerald-400 text-base" aria-hidden="true"></i>
                     <span>+244 923 529 486</span>
                 </a>
-                <a href="#contacto" data-gtm="cta-header-proposta" class="btn-shimmer gold-gradient-bg text-brandNavy font-bold px-5 py-2.5 rounded shadow-md hover:shadow-gold-glow transition-all text-xs tracking-wider uppercase flex items-center gap-2">
+                <a href="#contacto" data-gtm="cta-header-proposta" class="btn-shimmer gold-gradient-bg text-brandNavy font-bold px-4 py-2 rounded shadow-md hover:shadow-gold-glow transition-all text-[11px] tracking-wider uppercase flex items-center gap-2 leading-none">
                     <span>Solicite Proposta</span>
                     <i class="fa-solid fa-paper-plane text-[10px]" aria-hidden="true"></i>
                 </a>
@@ -670,7 +674,7 @@
                         </div>
                         <div class="gold-gradient-bg text-brandNavy text-[11px] font-extrabold uppercase tracking-wider text-center py-2">Pequenos Negócios</div>
                         <div class="p-4 bg-slate-50">
-                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20B%C3%A1sico%20%28200.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-basico" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2.5 px-3 rounded transition-colors border border-brandGold">
+                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20B%C3%A1sico%20%28200.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-basico" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2 px-3 rounded transition-colors border border-brandGold leading-none">
                                 <i class="fa-brands fa-whatsapp text-emerald-400" aria-hidden="true"></i> Solicitar Proposta
                             </a>
                         </div>
@@ -699,7 +703,7 @@
                         </div>
                         <div class="gold-gradient-bg text-brandNavy text-[11px] font-extrabold uppercase tracking-wider text-center py-2">PMEs Iniciais</div>
                         <div class="p-4 bg-slate-50">
-                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20Interm%C3%A9dio%20%28350.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-intermedio" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2.5 px-3 rounded transition-colors border border-brandGold">
+                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20Interm%C3%A9dio%20%28350.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-intermedio" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2 px-3 rounded transition-colors border border-brandGold leading-none">
                                 <i class="fa-brands fa-whatsapp text-emerald-400" aria-hidden="true"></i> Solicitar Proposta
                             </a>
                         </div>
@@ -729,7 +733,7 @@
                         </div>
                         <div class="gold-gradient-bg text-brandNavy text-[11px] font-black uppercase tracking-wider text-center py-2.5">Empresas em Crescimento</div>
                         <div class="p-4 bg-slate-50">
-                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20Avan%C3%A7ado%20%28550.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-avancado" class="w-full inline-flex items-center justify-center gap-2 gold-gradient-bg text-brandNavy text-xs font-black py-3 px-3 rounded shadow-md hover:opacity-95 transition-opacity">
+                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20Avan%C3%A7ado%20%28550.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-avancado" class="w-full inline-flex items-center justify-center gap-2 gold-gradient-bg text-brandNavy text-xs font-black py-2.5 px-3 rounded shadow-md hover:opacity-95 transition-opacity leading-none">
                                 <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i> Solicitar Proposta
                             </a>
                         </div>
@@ -758,7 +762,7 @@
                         </div>
                         <div class="gold-gradient-bg text-brandNavy text-[11px] font-extrabold uppercase tracking-wider text-center py-2">Empresas Estabelecidas</div>
                         <div class="p-4 bg-slate-50">
-                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20Premium%20%281.100.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-premium" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2.5 px-3 rounded transition-colors border border-brandGold">
+                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20solicitar%20uma%20proposta%20para%20o%20Pacote%20Premium%20%281.100.000%20Kz%29." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-premium" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2 px-3 rounded transition-colors border border-brandGold leading-none">
                                 <i class="fa-brands fa-whatsapp text-emerald-400" aria-hidden="true"></i> Solicitar Proposta
                             </a>
                         </div>
@@ -787,7 +791,7 @@
                         </div>
                         <div class="gold-gradient-bg text-brandNavy text-[11px] font-extrabold uppercase tracking-wider text-center py-2">Grandes Empresas</div>
                         <div class="p-4 bg-slate-50">
-                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20para%20o%20Pacote%20Enterprise." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-enterprise" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2.5 px-3 rounded transition-colors border border-brandGold">
+                            <a href="https://wa.me/244923529486?text=Ol%C3%A1%20Yannik%2C%20gostaria%20de%20agendar%20uma%20reuni%C3%A3o%20para%20o%20Pacote%20Enterprise." target="_blank" rel="noopener noreferrer" data-gtm="cta-pacote-enterprise" class="w-full inline-flex items-center justify-center gap-2 bg-brandNavy hover:bg-brandNavyDark text-white text-xs font-bold py-2 px-3 rounded transition-colors border border-brandGold leading-none">
                                 <i class="fa-brands fa-whatsapp text-emerald-400" aria-hidden="true"></i> Consultar Projeto
                             </a>
                         </div>
@@ -1008,42 +1012,50 @@
 
             <div class="space-y-4">
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Quanto tempo demora a desenvolver um website institucional?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        O prazo típico para um website institucional do Pacote Básico é de 7 a 14 dias úteis, dependendo da disponibilidade de conteúdos e feedback do cliente.
+                    <div class="faq-answer">
+                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                            O prazo típico para um website institucional do Pacote Básico é de 7 a 14 dias úteis, dependendo da disponibilidade de conteúdos e feedback do cliente.
+                        </div>
                     </div>
                 </div>
 
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Os pacotes incluem manutenção mensal?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Sim. Todos os pacotes incluem um plano de manutenção mensal opcional que cobre atualizações de segurança, backups e suporte técnico contínuo.
+                    <div class="faq-answer">
+                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                            Sim. Todos os pacotes incluem um plano de manutenção mensal opcional que cobre atualizações de segurança, backups e suporte técnico contínuo.
+                        </div>
                     </div>
                 </div>
 
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Trabalha com clientes fora de Luanda?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Sim. Atendo clientes em toda Angola e internacionalmente, com reuniões remotas por videoconferência e deslocações presenciais quando necessário.
+                    <div class="faq-answer">
+                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                            Sim. Atendo clientes em toda Angola e internacionalmente, com reuniões remotas por videoconferência e deslocações presenciais quando necessário.
+                        </div>
                     </div>
                 </div>
 
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Que formas de pagamento aceita?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
-                    <div class="faq-answer px-5 pb-5 text-sm text-slate-600 leading-relaxed">
-                        Aceito transferência bancária, Multicaixa Express e pagamentos parcelados por fases do projeto. O orçamento detalhado é apresentado após o diagnóstico inicial.
+                    <div class="faq-answer">
+                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                            Aceito transferência bancária, Multicaixa Express e pagamentos parcelados por fases do projeto. O orçamento detalhado é apresentado após o diagnóstico inicial.
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1143,7 +1155,7 @@
                         </div>
                         <!-- Honeypot anti-spam -->
                         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-                        <button type="submit" class="w-full btn-shimmer gold-gradient-bg text-brandNavy font-extrabold py-3.5 rounded text-xs uppercase tracking-wider shadow-lg hover:shadow-gold-glow transition-all flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full btn-shimmer gold-gradient-bg text-brandNavy font-extrabold py-3 rounded text-xs uppercase tracking-wider shadow-lg hover:shadow-gold-glow transition-all flex items-center justify-center gap-2 leading-none">
                             <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
                             <span>Enviar via WhatsApp</span>
                         </button>
@@ -1218,12 +1230,10 @@
                 else closeMenu();
             });
 
-            // Fechar com Esc
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeMenu();
             });
 
-            // Fechar ao clicar fora
             document.addEventListener('click', (e) => {
                 if (!mobileMenu.classList.contains('hidden') &&
                     !mobileMenu.contains(e.target) &&
@@ -1232,7 +1242,6 @@
                 }
             });
 
-            // Fechar ao clicar num link
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', closeMenu);
             });
@@ -1268,7 +1277,6 @@
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                // Honeypot
                 if (document.getElementById('website').value) return;
 
                 const nome = document.getElementById('nome').value.trim();
@@ -1285,7 +1293,6 @@
                 const textoFormatado = `Olá Yannik, meu nome é *${nome}*.\n\n*Email:* ${email}\n*Telefone:* ${telefone}\n*Serviço de interesse:* ${servico}\n*Mensagem:* ${mensagem}`;
                 const urlWhatsapp = `https://wa.me/244923529486?text=${encodeURIComponent(textoFormatado)}`;
 
-                // Evento GTM
                 window.dataLayer = window.dataLayer || [];
                 window.dataLayer.push({
                     'event': 'form_submit_whatsapp',
