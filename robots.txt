@@ -1,0 +1,23 @@
+# robots.txt — Portal Yannik Mateus
+# https://admyacm-hub.github.io/ao/
+
+User-agent: *
+Allow: /
+
+# Bloquear páginas de administração ou rascunhos (se existirem no futuro)
+Disallow: /admin/
+Disallow: /rascunhos/
+Disallow: /*.json$
+
+# Bloquear bots agressivos de scraping
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Sitemap
+Sitemap: https://admyacm-hub.github.io/ao/sitemap.xml
