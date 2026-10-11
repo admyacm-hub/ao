@@ -1,0 +1,60 @@
+{
+  "name": "Yannik Mateus — Consultor de TI & Engenharia de Software",
+  "short_name": "Yannik Mateus",
+  "description": "Portal executivo de consultoria de TI, engenharia de software, desenvolvimento web e segurança digital em Angola.",
+  "lang": "pt-AO",
+  "dir": "ltr",
+  "start_url": "/ao/",
+  "scope": "/ao/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#002b5c",
+  "theme_color": "#002b5c",
+  "categories": ["business", "productivity", "technology"],
+  "icons": [
+    {
+      "src": "Logo-favicon.jpeg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "Logo-favicon.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "Logo-favicon.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Contactar via WhatsApp",
+      "short_name": "WhatsApp",
+      "description": "Abrir conversa direta no WhatsApp",
+      "url": "/ao/#contacto",
+      "icons": [
+        {
+          "src": "Logo-favicon.jpeg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Ver Pacotes",
+      "short_name": "Pacotes",
+      "description": "Consultar pacotes de consultoria digital",
+      "url": "/ao/#pacotes",
+      "icons": [
+        {
+          "src": "Logo-favicon.jpeg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
