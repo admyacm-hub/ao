@@ -19,11 +19,11 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Yannik Alberto Constantino Mateus — Consultor de TI & Engenharia de Software em Angola</title>
     
     <!-- Canonical -->
-    <link rel="canonical" href="https://yannikmateus.ao/">
+    <link rel="canonical" href="https://admyacm-hub.github.io/ao/">
 
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="Logo-favicon.jpeg">
@@ -39,7 +39,7 @@
 
     <!-- Open Graph / Redes Sociais -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yannikmateus.ao/">
+    <meta property="og:url" content="https://admyacm-hub.github.io/ao/">
     <meta property="og:title" content="Yannik Alberto Constantino Mateus — Consultor de TI & Engenheiro de Software">
     <meta property="og:description" content="DISCIPLINA • FOCO • FÉ • AÇÃO — Soluções tecnológicas estratégicas e engenharia de software corporativa em Angola.">
     <meta property="og:image" content="1000483520.jpg">
@@ -56,11 +56,11 @@
       "@graph": [
         {
           "@type": "Person",
-          "@id": "https://yannikmateus.ao/#person",
+          "@id": "https://admyacm-hub.github.io/ao/#person",
           "name": "Yannik Alberto Constantino Mateus",
           "jobTitle": "Consultor de TI & Engenheiro de Software",
-          "url": "https://yannikmateus.ao/",
-          "image": "https://yannikmateus.ao/1000483520.jpg",
+          "url": "https://admyacm-hub.github.io/ao/",
+          "image": "https://admyacm-hub.github.io/ao/1000483520.jpg",
           "email": "consultor.yacm@gmail.com",
           "telephone": "+244923529486",
           "address": {
@@ -72,10 +72,10 @@
         },
         {
           "@type": "ProfessionalService",
-          "@id": "https://yannikmateus.ao/#service",
+          "@id": "https://admyacm-hub.github.io/ao/#service",
           "name": "Yannik Mateus — Consultoria de TI & Engenharia de Software",
-          "image": "https://yannikmateus.ao/1000483520.jpg",
-          "url": "https://yannikmateus.ao/",
+          "image": "https://admyacm-hub.github.io/ao/1000483520.jpg",
+          "url": "https://admyacm-hub.github.io/ao/",
           "telephone": "+244923529486",
           "email": "consultor.yacm@gmail.com",
           "priceRange": "Kz 200.000 - Kz 1.100.000+",
@@ -88,7 +88,7 @@
             "@type": "Country",
             "name": "Angola"
           },
-          "founder": { "@id": "https://yannikmateus.ao/#person" },
+          "founder": { "@id": "https://admyacm-hub.github.io/ao/#person" },
           "makesOffer": [
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria de TI" } },
             { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desenvolvimento Web" } },
@@ -171,6 +171,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #f8fafc;
@@ -213,7 +217,6 @@
             font-weight: 700;
         }
 
-        /* Skip Link para acessibilidade */
         .skip-link {
             position: absolute;
             left: -9999px;
@@ -229,13 +232,11 @@
             left: 0;
         }
 
-        /* Focus visível para acessibilidade */
         a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
             outline: 2px solid #d4af37;
             outline-offset: 2px;
         }
 
-        /* Scroll animations */
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -246,7 +247,6 @@
             transform: translateY(0);
         }
 
-        /* FAQ accordion */
         .faq-answer {
             display: grid;
             grid-template-rows: 0fr;
@@ -267,44 +267,56 @@
             transform: rotate(180deg);
         }
 
-        /* Toast */
+        /* Toast responsivo */
         #toast {
             position: fixed;
-            bottom: 100px;
-            right: 24px;
+            bottom: 90px;
+            left: 16px;
+            right: 16px;
             z-index: 9998;
             background: #002b5c;
             color: #fff;
             border-left: 4px solid #d4af37;
-            padding: 14px 20px;
+            padding: 12px 16px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.3s ease, transform 0.3s ease;
             pointer-events: none;
-            font-size: 14px;
+            font-size: 13px;
+            text-align: center;
         }
         #toast.show {
             opacity: 1;
             transform: translateY(0);
         }
+        @media (min-width: 640px) {
+            #toast {
+                bottom: 100px;
+                left: auto;
+                right: 24px;
+                max-width: 320px;
+                font-size: 14px;
+                text-align: left;
+            }
+        }
 
-        /* Botão flutuante WhatsApp */
+        /* Botão flutuante WhatsApp responsivo */
         #whatsapp-float {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 20px;
+            right: 20px;
             z-index: 9997;
-            width: 60px;
-            height: 60px;
+            width: 56px;
+            height: 56px;
             border-radius: 50%;
             background: #25D366;
             color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 28px;
             box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -325,8 +337,16 @@
             0% { transform: scale(1); opacity: 0.6; }
             100% { transform: scale(1.5); opacity: 0; }
         }
+        @media (min-width: 640px) {
+            #whatsapp-float {
+                bottom: 24px;
+                right: 24px;
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+        }
 
-        /* prefers-reduced-motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 animation-duration: 0.01ms !important;
@@ -365,15 +385,13 @@
 
     <!-- CABEÇALHO -->
     <header id="header" class="fixed top-0 left-0 w-full bg-brandNavy/95 backdrop-blur-md text-white z-50 transition-all duration-300 border-b border-brandGold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
             
-            <!-- Logo / Identidade -->
             <a href="#home" class="flex flex-col group shrink-0" aria-label="Yannik Mateus - Página inicial">
                 <span class="font-serif-custom text-base sm:text-lg font-bold tracking-wider text-white group-hover:text-brandGold transition-colors leading-tight">YANNIK MATEUS</span>
                 <span class="text-[8px] sm:text-[9px] tracking-widest text-brandGold uppercase font-semibold leading-tight">Consultor de TI & Engenharia de Software</span>
             </a>
 
-            <!-- Menu Desktop Nav -->
             <nav class="hidden md:flex items-center gap-4 lg:gap-5 text-sm font-medium" aria-label="Navegação principal">
                 <a href="#home" class="nav-link text-slate-200 hover:text-brandGold transition-colors whitespace-nowrap">Home</a>
                 <a href="#sobre" class="nav-link text-slate-200 hover:text-brandGold transition-colors whitespace-nowrap">Sobre</a>
@@ -385,20 +403,17 @@
                 <a href="#contacto" class="nav-link text-slate-200 hover:text-brandGold transition-colors whitespace-nowrap">Contacto</a>
             </nav>
 
-            <!-- CTA Executivo -->
             <div class="hidden lg:flex items-center shrink-0">
                 <a href="#contacto" data-gtm="cta-header-proposta" class="btn-shimmer gold-gradient-bg text-brandNavy font-bold px-4 py-2 rounded shadow-md hover:shadow-gold-glow transition-all text-[11px] tracking-wider uppercase whitespace-nowrap leading-none">
                     Solicite Proposta
                 </a>
             </div>
 
-            <!-- Menu Mobile Hamburger Button -->
             <button id="menuBtn" aria-label="Abrir menu de navegação" aria-expanded="false" class="md:hidden text-white text-2xl focus:outline-none p-2 shrink-0">
                 <i class="fa-solid fa-bars" id="menuIcon" aria-hidden="true"></i>
             </button>
         </div>
 
-        <!-- Menu Mobile Dropdown -->
         <div id="mobileMenu" class="hidden md:hidden bg-brandNavyDark border-t border-brandGold/20 px-6 py-6 space-y-4 text-center">
             <a href="#home" class="block text-white hover:text-brandGold font-medium transition-colors">Home</a>
             <a href="#sobre" class="block text-white hover:text-brandGold font-medium transition-colors">Sobre Mim</a>
@@ -417,27 +432,27 @@
     </header>
 
     <!-- HERO -->
-    <section id="home" class="pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-brandNavy via-brandNavy to-brandNavyDark text-white relative overflow-hidden">
+    <section id="home" class="pt-24 pb-12 sm:pt-28 sm:pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-brandNavy via-brandNavy to-brandNavyDark text-white relative overflow-hidden">
         <div class="absolute top-1/4 right-10 w-96 h-96 bg-brandGold/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="absolute bottom-10 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12 relative z-10">
-            <div class="flex-1 space-y-6 text-center md:text-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12 relative z-10">
+            <div class="flex-1 space-y-5 sm:space-y-6 text-center md:text-left">
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-brandGold/10 border border-brandGold/30 rounded-full">
                     <span class="w-2 h-2 rounded-full bg-brandGold animate-pulse"></span>
-                    <span class="text-brandGold text-xs font-semibold tracking-wider uppercase">Consultoria de Elite & Engenharia</span>
+                    <span class="text-brandGold text-[10px] sm:text-xs font-semibold tracking-wider uppercase">Consultoria de Elite & Engenharia</span>
                 </div>
                 
-                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
+                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
                     Yannik Alberto <br>
                     <span class="gold-gradient-text">Constantino Mateus</span>
                 </h1>
                 
-                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl">
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-xl mx-auto md:mx-0">
                     Especialista em arquitetura de sistemas, modernização de infraestrutura de TI e desenvolvimento de ecossistemas digitais de alta segurança e performance.
                 </p>
 
-                <div class="p-5 rounded-xl bg-white/5 border-l-4 border-brandGold backdrop-blur-md my-6 text-left shadow-lg">
+                <div class="p-4 sm:p-5 rounded-xl bg-white/5 border-l-4 border-brandGold backdrop-blur-md my-5 sm:my-6 text-left shadow-lg max-w-xl mx-auto md:mx-0">
                     <p class="text-brandGold font-bold text-xs sm:text-sm tracking-widest uppercase">
                         DISCIPLINA • FOCO • FÉ • AÇÃO
                     </p>
@@ -446,19 +461,19 @@
                     </p>
                 </div>
 
-                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-2">
-                    <a href="https://wa.me/244923529486" target="_blank" rel="noopener noreferrer" data-gtm="cta-hero-whatsapp" class="btn-shimmer bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-3.5 rounded shadow-lg transition-all text-sm tracking-wide text-center flex items-center justify-center gap-2">
+                <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start pt-2 max-w-md mx-auto md:mx-0">
+                    <a href="https://wa.me/244923529486" target="_blank" rel="noopener noreferrer" data-gtm="cta-hero-whatsapp" class="btn-shimmer bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 sm:px-8 py-3 sm:py-3.5 rounded shadow-lg transition-all text-sm tracking-wide text-center flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-lg" aria-hidden="true"></i>
                         <span>Falar no WhatsApp</span>
                     </a>
-                    <a href="#pacotes" data-gtm="cta-hero-pacotes" class="border border-brandGold/60 text-brandGold hover:bg-brandGold hover:text-brandNavy font-semibold px-8 py-3.5 rounded transition-all text-sm tracking-wide text-center">
+                    <a href="#pacotes" data-gtm="cta-hero-pacotes" class="border border-brandGold/60 text-brandGold hover:bg-brandGold hover:text-brandNavy font-semibold px-6 sm:px-8 py-3 sm:py-3.5 rounded transition-all text-sm tracking-wide text-center">
                         Ver Pacotes de Consultoria
                     </a>
                 </div>
             </div>
 
-            <div class="flex-1 flex justify-center">
-                <div class="relative w-full max-w-md group">
+            <div class="flex-1 flex justify-center w-full">
+                <div class="relative w-full max-w-xs sm:max-w-md group">
                     <div class="absolute -inset-1 bg-gradient-to-r from-brandGold to-amber-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
                     <div class="relative rounded-2xl overflow-hidden border-2 border-brandGold/50 shadow-2xl bg-brandNavy">
                         <img src="1000483520.jpg" alt="Yannik Alberto Constantino Mateus, consultor de TI, em terno vermelho" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
@@ -469,40 +484,40 @@
     </section>
 
     <!-- MÉTRICAS COM CONTADOR ANIMADO -->
-    <section class="bg-brandNavyDark text-white py-8 border-y border-brandGold/20">
+    <section class="bg-brandNavyDark text-white py-6 sm:py-8 border-y border-brandGold/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
                 <div class="p-2">
-                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text counter" data-target="100" data-suffix="%">0%</span>
-                    <span class="text-xs text-slate-400 font-medium">Foco em Resultados</span>
+                    <span class="block text-xl sm:text-2xl md:text-3xl font-extrabold gold-gradient-text counter" data-target="100" data-suffix="%">0%</span>
+                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium">Foco em Resultados</span>
                 </div>
                 <div class="p-2">
-                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text counter" data-target="15" data-suffix="+">0+</span>
-                    <span class="text-xs text-slate-400 font-medium">Projetos Entregues</span>
+                    <span class="block text-xl sm:text-2xl md:text-3xl font-extrabold gold-gradient-text counter" data-target="15" data-suffix="+">0+</span>
+                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium">Projetos Entregues</span>
                 </div>
                 <div class="p-2">
-                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text counter" data-target="3" data-suffix="">0</span>
-                    <span class="text-xs text-slate-400 font-medium">Países Atendidos</span>
+                    <span class="block text-xl sm:text-2xl md:text-3xl font-extrabold gold-gradient-text counter" data-target="3" data-suffix="">0</span>
+                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium">Países Atendidos</span>
                 </div>
                 <div class="p-2">
-                    <span class="block text-2xl sm:text-3xl font-extrabold gold-gradient-text counter" data-target="99" data-suffix="%">0%</span>
-                    <span class="text-xs text-slate-400 font-medium">Uptime Médio</span>
+                    <span class="block text-xl sm:text-2xl md:text-3xl font-extrabold gold-gradient-text counter" data-target="99" data-suffix="%">0%</span>
+                    <span class="text-[11px] sm:text-xs text-slate-400 font-medium">Uptime Médio</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SOBRE MIM -->
-    <section id="sobre" class="py-20 bg-brandBg">
+    <section id="sobre" class="py-14 sm:py-20 bg-brandBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Sobre Mim</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandNavy uppercase tracking-wide">Sobre Mim</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6 reveal">
-                    <h3 class="text-2xl font-bold text-brandNavy">Liderança Técnica & Excelência em Engenharia</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="space-y-5 sm:space-y-6 reveal">
+                    <h3 class="text-xl sm:text-2xl font-bold text-brandNavy">Liderança Técnica & Excelência em Engenharia</h3>
                     <p class="text-slate-600 leading-relaxed text-sm sm:text-base">
                         Sou <strong>Yannik Alberto Constantino Mateus</strong>, consultor de tecnologia da informação e engenheiro de software dedicado a alinhar soluções técnicas aos mais rigorosos objetivos estratégicos de negócios.
                     </p>
@@ -510,7 +525,7 @@
                         Com sólida atuação no desenvolvimento web, segurança de redes e automação de processos, auxilio organizações na transição digital segura e na construção de plataformas resilientes e preparadas para escalabilidade.
                     </p>
                     
-                    <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 sm:pt-4">
                         <div class="p-4 bg-white rounded-lg shadow-sm border-l-4 border-brandGold">
                             <i class="fa-solid fa-diagram-project text-brandNavy mb-2 text-xl" aria-hidden="true"></i>
                             <span class="block font-bold text-brandNavy text-sm">Arquitetura Limpa</span>
@@ -524,21 +539,24 @@
                     </div>
                 </div>
 
-                <div class="bg-brandNavy text-white p-8 sm:p-10 rounded-2xl shadow-xl relative overflow-hidden reveal">
-                    <i class="fa-solid fa-quote-right text-brandGold/15 text-8xl absolute -top-4 -right-4 pointer-events-none" aria-hidden="true"></i>
-                    <h4 class="text-xl font-bold text-brandGold mb-4 relative z-10">Visão Estratégica</h4>
+                <div class="bg-brandNavy text-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-xl relative overflow-hidden reveal">
+                    <i class="fa-solid fa-quote-right text-brandGold/15 text-7xl sm:text-8xl absolute -top-4 -right-4 pointer-events-none" aria-hidden="true"></i>
+                    <h4 class="text-lg sm:text-xl font-bold text-brandGold mb-4 relative z-10">Visão Estratégica</h4>
                     <p class="text-slate-200 text-sm sm:text-base leading-relaxed mb-6 italic relative z-10">
                         "Tecnologia só cumpre o seu verdadeiro propósito quando resolve problemas reais do negócio com máxima simplicidade, eficiência e segurança."
                     </p>
-                    <ul class="space-y-3.5 text-xs sm:text-sm text-slate-300 relative z-10">
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brandGold" aria-hidden="true"></i> Consultoria Executiva e Alinhamento Estratégico
+                    <ul class="space-y-3 sm:space-y-3.5 text-xs sm:text-sm text-slate-300 relative z-10">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brandGold mt-0.5 shrink-0" aria-hidden="true"></i>
+                            <span>Consultoria Executiva e Alinhamento Estratégico</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brandGold" aria-hidden="true"></i> Engenharia e Desenvolvimento de Software Sob Medida
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brandGold mt-0.5 shrink-0" aria-hidden="true"></i>
+                            <span>Engenharia e Desenvolvimento de Software Sob Medida</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-circle-check text-brandGold" aria-hidden="true"></i> Auditoria de Infraestrutura & Segurança Digital
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-circle-check text-brandGold mt-0.5 shrink-0" aria-hidden="true"></i>
+                            <span>Auditoria de Infraestrutura & Segurança Digital</span>
                         </li>
                     </ul>
                 </div>
@@ -547,23 +565,23 @@
     </section>
 
     <!-- SERVIÇOS -->
-    <section id="servicos" class="py-20 bg-slate-100">
+    <section id="servicos" class="py-14 sm:py-20 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Serviços Especializados</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandNavy uppercase tracking-wide">Serviços Especializados</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
                 <p class="text-slate-600 mt-4 text-sm">Capacidades técnicas e estratégicas focadas no crescimento do seu negócio.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                 
-                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between reveal">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between reveal">
                     <div>
-                        <div class="w-14 h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-5 sm:mb-6 text-xl sm:text-2xl">
                             <i class="fa-solid fa-briefcase text-brandGold" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-brandNavy mb-3">Consultoria de TI</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-brandNavy mb-3">Consultoria de TI</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
                             Diagnóstico de maturidade tecnológica, planejamento de transformação digital e otimização de custos com infraestrutura.
                         </p>
                     </div>
@@ -572,13 +590,13 @@
                     </a>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between reveal">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between reveal">
                     <div>
-                        <div class="w-14 h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-5 sm:mb-6 text-xl sm:text-2xl">
                             <i class="fa-solid fa-code text-brandGold" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-brandNavy mb-3">Desenvolvimento Web</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-brandNavy mb-3">Desenvolvimento Web</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
                             Desenvolvimento de plataformas Web institucionais, sistemas de e-commerce e portais customizados e responsivos.
                         </p>
                     </div>
@@ -587,13 +605,13 @@
                     </a>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between reveal">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md hover:shadow-xl border border-slate-200/80 hover:border-brandGold transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between reveal">
                     <div>
-                        <div class="w-14 h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-6 text-2xl">
+                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-brandNavy/10 text-brandNavy rounded-xl flex items-center justify-center mb-5 sm:mb-6 text-xl sm:text-2xl">
                             <i class="fa-solid fa-shield-halved text-brandGold" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-brandNavy mb-3">Segurança Digital</h3>
-                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                        <h3 class="text-lg sm:text-xl font-bold text-brandNavy mb-3">Segurança Digital</h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-5 sm:mb-6">
                             Avaliação de vulnerabilidades, implementação de firewalls, encriptação e protocolos avançados de proteção contra ameaças.
                         </p>
                     </div>
@@ -607,58 +625,58 @@
     </section>
 
     <!-- PROCESSO DE TRABALHO -->
-    <section id="processo" class="py-20 bg-brandBg">
+    <section id="processo" class="py-14 sm:py-20 bg-brandBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Como Trabalhamos</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandNavy uppercase tracking-wide">Como Trabalhamos</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
                 <p class="text-slate-600 mt-4 text-sm">Um processo estruturado em 4 etapas para garantir clareza e resultados.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
                 <div class="text-center reveal">
-                    <div class="w-16 h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-xl font-bold mb-4 border-2 border-brandGold">01</div>
-                    <h3 class="font-bold text-brandNavy mb-2">Diagnóstico</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Reunião inicial para compreender objetivos, desafios e contexto do negócio.</p>
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-base sm:text-xl font-bold mb-3 sm:mb-4 border-2 border-brandGold">01</div>
+                    <h3 class="text-sm sm:text-base font-bold text-brandNavy mb-2">Diagnóstico</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">Reunião inicial para compreender objetivos, desafios e contexto do negócio.</p>
                 </div>
                 <div class="text-center reveal">
-                    <div class="w-16 h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-xl font-bold mb-4 border-2 border-brandGold">02</div>
-                    <h3 class="font-bold text-brandNavy mb-2">Estratégia</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Definição de arquitetura, cronograma, orçamento e entregáveis do projeto.</p>
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-base sm:text-xl font-bold mb-3 sm:mb-4 border-2 border-brandGold">02</div>
+                    <h3 class="text-sm sm:text-base font-bold text-brandNavy mb-2">Estratégia</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">Definição de arquitetura, cronograma, orçamento e entregáveis do projeto.</p>
                 </div>
                 <div class="text-center reveal">
-                    <div class="w-16 h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-xl font-bold mb-4 border-2 border-brandGold">03</div>
-                    <h3 class="font-bold text-brandNavy mb-2">Execução</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Desenvolvimento ágil com entregas incrementais, testes contínuos e comunicação direta.</p>
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-base sm:text-xl font-bold mb-3 sm:mb-4 border-2 border-brandGold">03</div>
+                    <h3 class="text-sm sm:text-base font-bold text-brandNavy mb-2">Execução</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">Desenvolvimento ágil com entregas incrementais, testes contínuos e comunicação direta.</p>
                 </div>
                 <div class="text-center reveal">
-                    <div class="w-16 h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-xl font-bold mb-4 border-2 border-brandGold">04</div>
-                    <h3 class="font-bold text-brandNavy mb-2">Suporte</h3>
-                    <p class="text-xs text-slate-600 leading-relaxed">Monitorização, manutenção evolutiva e suporte técnico contínuo pós-entrega.</p>
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 mx-auto rounded-full bg-brandNavy text-brandGold flex items-center justify-center text-base sm:text-xl font-bold mb-3 sm:mb-4 border-2 border-brandGold">04</div>
+                    <h3 class="text-sm sm:text-base font-bold text-brandNavy mb-2">Suporte</h3>
+                    <p class="text-[11px] sm:text-xs text-slate-600 leading-relaxed">Monitorização, manutenção evolutiva e suporte técnico contínuo pós-entrega.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- PACOTES -->
-    <section id="pacotes" class="py-20 bg-brandNavyDark text-white relative overflow-hidden">
+    <section id="pacotes" class="py-14 sm:py-20 bg-brandNavyDark text-white relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <span class="text-brandGold text-xs font-bold uppercase tracking-widest bg-brandNavy border border-brandGold/30 px-3.5 py-1.5 rounded-full inline-block mb-3">Transparência & Investimento</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold gold-gradient-text uppercase">Pacotes de Consultoria Digital — Angola</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <span class="text-brandGold text-[10px] sm:text-xs font-bold uppercase tracking-widest bg-brandNavy border border-brandGold/30 px-3.5 py-1.5 rounded-full inline-block mb-3">Transparência & Investimento</span>
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold gold-gradient-text uppercase">Pacotes de Consultoria Digital — Angola</h2>
                 <div class="w-20 h-1 bg-brandGold mx-auto mt-4 mb-3"></div>
                 <p class="text-slate-300 text-sm">Escolha o Pacote Ideal com Máximos Benefícios Expostos</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 items-stretch">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6 items-stretch">
 
                 <!-- BÁSICO -->
                 <div class="bg-white text-slate-800 rounded-2xl border-2 border-brandGold/40 shadow-xl flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1 reveal">
                     <div>
-                        <div class="bg-brandNavy p-5 text-center border-b-2 border-brandGold">
-                            <h3 class="text-xl font-bold uppercase tracking-wider text-brandGold">Básico</h3>
+                        <div class="bg-brandNavy p-4 sm:p-5 text-center border-b-2 border-brandGold">
+                            <h3 class="text-lg sm:text-xl font-bold uppercase tracking-wider text-brandGold">Básico</h3>
                         </div>
-                        <ul class="p-5 space-y-3 text-xs text-slate-700 font-medium">
+                        <ul class="p-4 sm:p-5 space-y-2.5 sm:space-y-3 text-xs text-slate-700 font-medium">
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Website Institucional (até 5 páginas)</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Design 100% Responsivo e Moderno</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Formulário de Contacto via WhatsApp</span></li>
@@ -684,10 +702,10 @@
                 <!-- INTERMÉDIO -->
                 <div class="bg-white text-slate-800 rounded-2xl border-2 border-brandGold/40 shadow-xl flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1 reveal">
                     <div>
-                        <div class="bg-brandNavy p-5 text-center border-b-2 border-brandGold">
-                            <h3 class="text-xl font-bold uppercase tracking-wider text-brandGold">Intermédio</h3>
+                        <div class="bg-brandNavy p-4 sm:p-5 text-center border-b-2 border-brandGold">
+                            <h3 class="text-lg sm:text-xl font-bold uppercase tracking-wider text-brandGold">Intermédio</h3>
                         </div>
-                        <ul class="p-5 space-y-3 text-xs text-slate-700 font-medium">
+                        <ul class="p-4 sm:p-5 space-y-2.5 sm:space-y-3 text-xs text-slate-700 font-medium">
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Tudo do Pacote Básico incluído</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Landing Page Otimizada para Conversão</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>SEO Local & Indexação no Google</span></li>
@@ -714,10 +732,10 @@
                 <div class="bg-white text-slate-800 rounded-2xl border-4 border-brandGold shadow-2xl flex flex-col justify-between overflow-hidden relative transform lg:-translate-y-3 transition-all duration-300 reveal">
                     <div class="gold-gradient-bg text-brandNavy text-center text-[10px] font-extrabold uppercase tracking-widest py-1.5 px-4">★ Mais Recomendado</div>
                     <div>
-                        <div class="bg-brandNavy p-5 text-center border-b-2 border-brandGold">
-                            <h3 class="text-2xl font-black uppercase tracking-wider text-brandGold">Avançado</h3>
+                        <div class="bg-brandNavy p-4 sm:p-5 text-center border-b-2 border-brandGold">
+                            <h3 class="text-xl sm:text-2xl font-black uppercase tracking-wider text-brandGold">Avançado</h3>
                         </div>
-                        <ul class="p-5 space-y-3 text-xs text-slate-800 font-semibold">
+                        <ul class="p-4 sm:p-5 space-y-2.5 sm:space-y-3 text-xs text-slate-800 font-semibold">
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Tudo do Pacote Intermédio incluído</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>UX/UI Premium & Alta Velocidade</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>SEO Técnico Completo & Schema Markup</span></li>
@@ -743,10 +761,10 @@
                 <!-- PREMIUM -->
                 <div class="bg-white text-slate-800 rounded-2xl border-2 border-brandGold/40 shadow-xl flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1 reveal">
                     <div>
-                        <div class="bg-brandNavy p-5 text-center border-b-2 border-brandGold">
-                            <h3 class="text-xl font-bold uppercase tracking-wider text-brandGold">Premium</h3>
+                        <div class="bg-brandNavy p-4 sm:p-5 text-center border-b-2 border-brandGold">
+                            <h3 class="text-lg sm:text-xl font-bold uppercase tracking-wider text-brandGold">Premium</h3>
                         </div>
-                        <ul class="p-5 space-y-3 text-xs text-slate-700 font-medium">
+                        <ul class="p-4 sm:p-5 space-y-2.5 sm:space-y-3 text-xs text-slate-700 font-medium">
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Tudo do Pacote Avançado incluído</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Consultoria Estratégica Executiva de TI</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>E-Commerce ou Portal Completo</span></li>
@@ -772,10 +790,10 @@
                 <!-- ENTERPRISE -->
                 <div class="bg-white text-slate-800 rounded-2xl border-2 border-brandGold/40 shadow-xl flex flex-col justify-between overflow-hidden transition-all duration-300 hover:-translate-y-1 reveal">
                     <div>
-                        <div class="bg-brandNavy p-5 text-center border-b-2 border-brandGold">
-                            <h3 class="text-xl font-bold uppercase tracking-wider text-brandGold">Enterprise</h3>
+                        <div class="bg-brandNavy p-4 sm:p-5 text-center border-b-2 border-brandGold">
+                            <h3 class="text-lg sm:text-xl font-bold uppercase tracking-wider text-brandGold">Enterprise</h3>
                         </div>
-                        <ul class="p-5 space-y-3 text-xs text-slate-700 font-medium">
+                        <ul class="p-4 sm:p-5 space-y-2.5 sm:space-y-3 text-xs text-slate-700 font-medium">
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Arquitetura Multi-Tenant / Cloud</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Integração de APIs, ERPs e Legados</span></li>
                             <li class="flex items-start gap-2"><i class="fa-solid fa-circle-check text-brandGold shrink-0 mt-0.5" aria-hidden="true"></i><span>Infraestrutura Alta Disponibilidade (SLA)</span></li>
@@ -800,7 +818,7 @@
 
             </div>
 
-            <div class="mt-12 text-center bg-brandNavy/80 border border-brandGold/40 rounded-xl p-6 backdrop-blur-sm max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="mt-10 sm:mt-12 text-center bg-brandNavy/80 border border-brandGold/40 rounded-xl p-5 sm:p-6 backdrop-blur-sm max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div class="text-left">
                     <span class="block text-brandGold font-bold text-sm sm:text-base">Precisa de um projeto sob medida?</span>
                     <span class="text-xs text-slate-300">Entre em contacto telefónico direto para agendamento presencial ou reuniões executivas.</span>
@@ -814,25 +832,25 @@
     </section>
 
     <!-- PORTFÓLIO -->
-    <section id="portfolio" class="py-20 bg-brandBg">
+    <section id="portfolio" class="py-14 sm:py-20 bg-brandBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Portfólio de Projetos</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandNavy uppercase tracking-wide">Portfólio de Projetos</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
                 <p class="text-slate-600 mt-4 text-sm">Casos de sucesso e plataformas institucionais desenvolvidas com elevado padrão técnico.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                 
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 flex flex-col justify-between hover:border-brandGold transition-all duration-300 group reveal">
-                    <div class="bg-brandNavy p-8 flex flex-col items-center justify-center relative overflow-hidden">
-                        <span class="text-2xl font-serif-custom text-brandGold font-bold tracking-widest z-10">VFINO</span>
+                    <div class="bg-brandNavy p-6 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-xl sm:text-2xl font-serif-custom text-brandGold font-bold tracking-widest z-10">VFINO</span>
                         <span class="text-[10px] text-slate-300 uppercase tracking-widest mt-1 z-10">E-Commerce & Retail</span>
                         <div class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-400/30">Ativo</div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
-                            <h3 class="text-lg font-bold text-brandNavy">VFino Store</h3>
+                            <h3 class="text-base sm:text-lg font-bold text-brandNavy">VFino Store</h3>
                             <p class="text-slate-600 text-xs leading-relaxed mt-2">Loja virtual completa com painel de gestão administrativa e integração de pagamentos e vitrine de produtos.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5">
@@ -848,14 +866,14 @@
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 flex flex-col justify-between hover:border-brandGold transition-all duration-300 group reveal">
-                    <div class="bg-brandNavy p-8 flex flex-col items-center justify-center relative overflow-hidden">
-                        <span class="text-2xl font-serif-custom text-white font-bold tracking-wider z-10">LUÍS PEDRO</span>
+                    <div class="bg-brandNavy p-6 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-xl sm:text-2xl font-serif-custom text-white font-bold tracking-wider z-10">LUÍS PEDRO</span>
                         <span class="text-[10px] text-brandGold uppercase tracking-widest mt-1 z-10">Despachos Aduaneiros</span>
                         <div class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-400/30">Ativo</div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
-                            <h3 class="text-lg font-bold text-brandNavy">Luís Pedro Despachantes</h3>
+                            <h3 class="text-base sm:text-lg font-bold text-brandNavy">Luís Pedro Despachantes</h3>
                             <p class="text-slate-600 text-xs leading-relaxed mt-2">Portal executivo para apresentação de serviços de desembaraço aduaneiro, logística e consultoria de importação/exportação.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5">
@@ -871,14 +889,14 @@
                 </div>
 
                 <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200 flex flex-col justify-between hover:border-brandGold transition-all duration-300 group reveal">
-                    <div class="bg-brandNavy p-8 flex flex-col items-center justify-center relative overflow-hidden">
-                        <span class="text-2xl font-serif-custom text-brandGold font-bold tracking-wider z-10">CLÁUDIO CORAGEM</span>
+                    <div class="bg-brandNavy p-6 sm:p-8 flex flex-col items-center justify-center relative overflow-hidden">
+                        <span class="text-xl sm:text-2xl font-serif-custom text-brandGold font-bold tracking-wider z-10">CLÁUDIO CORAGEM</span>
                         <span class="text-[10px] text-slate-300 uppercase tracking-widest mt-1 z-10">Despachante Oficial</span>
                         <div class="absolute top-3 right-3 bg-emerald-500/20 text-emerald-300 text-[9px] font-bold px-2 py-0.5 rounded-full border border-emerald-400/30">Ativo</div>
                     </div>
-                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                    <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div>
-                            <h3 class="text-lg font-bold text-brandNavy">Cláudio Coragem Despachantes</h3>
+                            <h3 class="text-base sm:text-lg font-bold text-brandNavy">Cláudio Coragem Despachantes</h3>
                             <p class="text-slate-600 text-xs leading-relaxed mt-2">Plataforma digital otimizada para consulta de credenciais institucionais e canal direto de atendimento a clientes.</p>
                         </div>
                         <div class="flex flex-wrap gap-1.5">
@@ -898,22 +916,22 @@
     </section>
 
     <!-- DEPOIMENTOS -->
-    <section id="depoimentos" class="py-20 bg-slate-100">
+    <section id="depoimentos" class="py-14 sm:py-20 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">O Que Dizem os Clientes</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandNavy uppercase tracking-wide">O Que Dizem os Clientes</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
                 <p class="text-slate-600 mt-4 text-sm">Resultados reais e relações construídas com base em confiança e excelência técnica.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-brandGold flex flex-col justify-between reveal">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border-t-4 border-brandGold flex flex-col justify-between reveal">
                     <div>
                         <i class="fa-solid fa-quote-left text-brandGold/40 text-3xl mb-4" aria-hidden="true"></i>
                         <p class="text-slate-700 text-sm italic leading-relaxed">"O Yannik entregou a nossa loja virtual em prazo recorde, com um nível de detalhe técnico que superou as nossas expectativas. Recomendo sem hesitar."</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brandNavy text-brandGold flex items-center justify-center font-bold">VF</div>
+                        <div class="w-10 h-10 rounded-full bg-brandNavy text-brandGold flex items-center justify-center font-bold shrink-0">VF</div>
                         <div>
                             <span class="block text-sm font-bold text-brandNavy">Equipa VFino</span>
                             <span class="text-xs text-slate-500">E-Commerce, Luanda</span>
@@ -921,13 +939,13 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-brandGold flex flex-col justify-between reveal">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border-t-4 border-brandGold flex flex-col justify-between reveal">
                     <div>
                         <i class="fa-solid fa-quote-left text-brandGold/40 text-3xl mb-4" aria-hidden="true"></i>
                         <p class="text-slate-700 text-sm italic leading-relaxed">"Profissionalismo exemplar. O portal que desenvolvemos juntos tornou-se a principal ferramenta de captação de clientes da nossa empresa."</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brandNavy text-brandGold flex items-center justify-center font-bold">LP</div>
+                        <div class="w-10 h-10 rounded-full bg-brandNavy text-brandGold flex items-center justify-center font-bold shrink-0">LP</div>
                         <div>
                             <span class="block text-sm font-bold text-brandNavy">Luís Pedro</span>
                             <span class="text-xs text-slate-500">Despachante Aduaneiro</span>
@@ -935,13 +953,13 @@
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-brandGold flex flex-col justify-between reveal">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border-t-4 border-brandGold flex flex-col justify-between reveal">
                     <div>
                         <i class="fa-solid fa-quote-left text-brandGold/40 text-3xl mb-4" aria-hidden="true"></i>
                         <p class="text-slate-700 text-sm italic leading-relaxed">"A consultoria de segurança digital identificou vulnerabilidades que nem sabíamos que existiam. Serviço rigoroso e altamente recomendado."</p>
                     </div>
                     <div class="mt-6 pt-4 border-t border-slate-100 flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-brandNavy text-brandGold flex items-center justify-center font-bold">CC</div>
+                        <div class="w-10 h-10 rounded-full bg-brandNavy text-brandGold flex items-center justify-center font-bold shrink-0">CC</div>
                         <div>
                             <span class="block text-sm font-bold text-brandNavy">Cláudio Coragem</span>
                             <span class="text-xs text-slate-500">Despachante Oficial</span>
@@ -953,46 +971,46 @@
     </section>
 
     <!-- BLOG -->
-    <section id="blog" class="py-20 bg-brandBg">
+    <section id="blog" class="py-14 sm:py-20 bg-brandBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Blog & Insights</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandNavy uppercase tracking-wide">Blog & Insights</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
                 <p class="text-slate-600 mt-4 text-sm">Artigos analíticos sobre Tecnologia da Informação, Geopolítica e Mercados Financeiros.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
                 <article class="bg-white rounded-2xl overflow-hidden shadow border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow reveal">
-                    <div class="p-6">
+                    <div class="p-5 sm:p-6">
                         <span class="text-[10px] font-bold text-brandGold uppercase tracking-widest bg-brandNavy/10 px-3 py-1 rounded-full">Tecnologia & TI</span>
                         <h3 class="text-base font-bold text-brandNavy mt-4 mb-2">Modernização de Sistemas Legados: Desafios e Estratégias em 2026</h3>
                         <p class="text-slate-600 text-xs leading-relaxed">Uma análise prática sobre migração para nuvem, microsserviços e redução de débitos técnicos em ambientes corporativos.</p>
                     </div>
-                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
                         <span class="text-[11px] text-slate-400">Leitura: 5 min</span>
                         <a href="artigo1.html" class="text-xs text-brandNavy font-bold hover:text-brandGold transition-colors">Ler Artigo &rarr;</a>
                     </div>
                 </article>
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow reveal">
-                    <div class="p-6">
+                    <div class="p-5 sm:p-6">
                         <span class="text-[10px] font-bold text-brandGold uppercase tracking-widest bg-brandNavy/10 px-3 py-1 rounded-full">Segurança Digital</span>
                         <h3 class="text-base font-bold text-brandNavy mt-4 mb-2">Cibersegurança Corporativa: Protegendo Ativos Críticos</h3>
                         <p class="text-slate-600 text-xs leading-relaxed">Como estabelecer protocolos de defesa em profundidade, auditorias regulares e conformidade com padrões internacionais.</p>
                     </div>
-                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
                         <span class="text-[11px] text-slate-400">Leitura: 4 min</span>
                         <a href="artigo2.html" class="text-xs text-brandNavy font-bold hover:text-brandGold transition-colors">Ler Artigo &rarr;</a>
                     </div>
                 </article>
 
                 <article class="bg-white rounded-2xl overflow-hidden shadow border border-slate-200 flex flex-col justify-between hover:shadow-lg transition-shadow reveal">
-                    <div class="p-6">
+                    <div class="p-5 sm:p-6">
                         <span class="text-[10px] font-bold text-brandGold uppercase tracking-widest bg-brandNavy/10 px-3 py-1 rounded-full">Engenharia Web</span>
                         <h3 class="text-base font-bold text-brandNavy mt-4 mb-2">Arquitetura Full-Stack Escalável: Do Banco à Interface</h3>
                         <p class="text-slate-600 text-xs leading-relaxed">Boas práticas na estruturação de aplicações web robustas, garantindo performance, manutenibilidade e experiência de uso.</p>
                     </div>
-                    <div class="px-6 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <div class="px-5 sm:px-6 pb-5 sm:pb-6 pt-3 border-t border-slate-100 flex items-center justify-between">
                         <span class="text-[11px] text-slate-400">Leitura: 6 min</span>
                         <a href="artigo3.html" class="text-xs text-brandNavy font-bold hover:text-brandGold transition-colors">Ler Artigo &rarr;</a>
                     </div>
@@ -1002,58 +1020,58 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-20 bg-slate-100">
+    <section id="faq" class="py-14 sm:py-20 bg-slate-100">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandNavy uppercase tracking-wide">Perguntas Frequentes</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandNavy uppercase tracking-wide">Perguntas Frequentes</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
                 <p class="text-slate-600 mt-4 text-sm">Respostas às dúvidas mais comuns antes de iniciar um projeto.</p>
             </div>
 
-            <div class="space-y-4">
+            <div class="space-y-3 sm:space-y-4">
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-3 text-left p-4 sm:p-5 text-sm sm:text-base font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Quanto tempo demora a desenvolver um website institucional?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-sm text-slate-600 leading-relaxed">
                             O prazo típico para um website institucional do Pacote Básico é de 7 a 14 dias úteis, dependendo da disponibilidade de conteúdos e feedback do cliente.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-3 text-left p-4 sm:p-5 text-sm sm:text-base font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Os pacotes incluem manutenção mensal?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-sm text-slate-600 leading-relaxed">
                             Sim. Todos os pacotes incluem um plano de manutenção mensal opcional que cobre atualizações de segurança, backups e suporte técnico contínuo.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-3 text-left p-4 sm:p-5 text-sm sm:text-base font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Trabalha com clientes fora de Luanda?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-sm text-slate-600 leading-relaxed">
                             Sim. Atendo clientes em toda Angola e internacionalmente, com reuniões remotas por videoconferência e deslocações presenciais quando necessário.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden reveal">
-                    <button class="faq-question w-full flex items-center justify-between gap-4 text-left p-5 font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
+                    <button class="faq-question w-full flex items-center justify-between gap-3 text-left p-4 sm:p-5 text-sm sm:text-base font-bold text-brandNavy hover:text-brandGold transition-colors" aria-expanded="false">
                         <span>Que formas de pagamento aceita?</span>
                         <i class="fa-solid fa-chevron-down faq-chevron text-brandGold" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer">
-                        <div class="px-5 pb-5 text-sm text-slate-600 leading-relaxed">
+                        <div class="px-4 sm:px-5 pb-4 sm:pb-5 text-sm text-slate-600 leading-relaxed">
                             Aceito transferência bancária, Multicaixa Express e pagamentos parcelados por fases do projeto. O orçamento detalhado é apresentado após o diagnóstico inicial.
                         </div>
                     </div>
@@ -1063,85 +1081,85 @@
     </section>
 
     <!-- CONTACTO -->
-    <section id="contacto" class="py-20 bg-brandNavy text-white relative">
+    <section id="contacto" class="py-14 sm:py-20 bg-brandNavy text-white relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16 reveal">
-                <h2 class="text-3xl font-bold text-brandGold uppercase tracking-wide">Iniciar Projeto ou Consultoria</h2>
+            <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 reveal">
+                <h2 class="text-2xl sm:text-3xl font-bold text-brandGold uppercase tracking-wide">Iniciar Projeto ou Consultoria</h2>
                 <div class="w-16 h-1 bg-brandGold mx-auto mt-3"></div>
                 <p class="text-slate-300 mt-4 text-sm">Entre em contacto direto para discutir a sua próxima evolução tecnológica.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-start">
                 
-                <div class="space-y-6 reveal">
-                    <h3 class="text-2xl font-bold text-white">Canais Oficiais</h3>
+                <div class="space-y-5 sm:space-y-6 reveal">
+                    <h3 class="text-xl sm:text-2xl font-bold text-white">Canais Oficiais</h3>
                     <p class="text-slate-300 text-sm leading-relaxed">
                         Disponível para consultorias de alto nível, desenvolvimento de sistemas complexos e arquitetura corporativa em Luanda e internacionalmente.
                     </p>
 
-                    <div class="space-y-4 pt-2">
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-brandGold/20">
-                            <div class="w-12 h-12 rounded-lg bg-brandGold/20 text-brandGold flex items-center justify-center text-xl">
+                    <div class="space-y-3 sm:space-y-4 pt-2">
+                        <div class="flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-white/5 border border-brandGold/20">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brandGold/20 text-brandGold flex items-center justify-center text-lg sm:text-xl shrink-0">
                                 <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <span class="block text-xs text-slate-400 uppercase font-semibold">Correio Eletrónico</span>
-                                <a href="mailto:consultor.yacm@gmail.com" class="text-sm font-bold text-white hover:text-brandGold transition-colors">consultor.yacm@gmail.com</a>
+                            <div class="min-w-0">
+                                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-semibold">Correio Eletrónico</span>
+                                <a href="mailto:consultor.yacm@gmail.com" class="text-sm font-bold text-white hover:text-brandGold transition-colors break-all">consultor.yacm@gmail.com</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-brandGold/20">
-                            <div class="w-12 h-12 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl">
+                        <div class="flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-white/5 border border-brandGold/20">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-lg sm:text-xl shrink-0">
                                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <span class="block text-xs text-slate-400 uppercase font-semibold">WhatsApp & Propostas</span>
+                            <div class="min-w-0">
+                                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-semibold">WhatsApp & Propostas</span>
                                 <a href="https://wa.me/244923529486" target="_blank" rel="noopener noreferrer" class="text-sm font-bold text-white hover:text-brandGold transition-colors">+244 923 529 486</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-brandGold/20">
-                            <div class="w-12 h-12 rounded-lg bg-brandGold/20 text-brandGold flex items-center justify-center text-xl">
+                        <div class="flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-white/5 border border-brandGold/20">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brandGold/20 text-brandGold flex items-center justify-center text-lg sm:text-xl shrink-0">
                                 <i class="fa-solid fa-phone" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <span class="block text-xs text-slate-400 uppercase font-semibold">Atendimento Telefónico</span>
+                            <div class="min-w-0">
+                                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-semibold">Atendimento Telefónico</span>
                                 <a href="tel:+244951913658" class="text-sm font-bold text-white hover:text-brandGold transition-colors">+244 951 913 658</a>
                             </div>
                         </div>
 
-                        <div class="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-brandGold/20">
-                            <div class="w-12 h-12 rounded-lg bg-brandGold/20 text-brandGold flex items-center justify-center text-xl">
+                        <div class="flex items-center gap-3 sm:gap-4 p-3.5 sm:p-4 rounded-xl bg-white/5 border border-brandGold/20">
+                            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-brandGold/20 text-brandGold flex items-center justify-center text-lg sm:text-xl shrink-0">
                                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                             </div>
-                            <div>
-                                <span class="block text-xs text-slate-400 uppercase font-semibold">Localização</span>
+                            <div class="min-w-0">
+                                <span class="block text-[10px] sm:text-xs text-slate-400 uppercase font-semibold">Localização</span>
                                 <span class="text-sm font-bold text-white">Luanda, Angola</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-brandNavyDark p-8 rounded-2xl border border-brandGold/30 shadow-2xl reveal">
-                    <h3 class="text-xl font-bold text-brandGold mb-6">Enviar Mensagem Rápida</h3>
-                    <form id="contactForm" class="space-y-4" novalidate>
+                <div class="bg-brandNavyDark p-5 sm:p-8 rounded-2xl border border-brandGold/30 shadow-2xl reveal">
+                    <h3 class="text-lg sm:text-xl font-bold text-brandGold mb-5 sm:mb-6">Enviar Mensagem Rápida</h3>
+                    <form id="contactForm" class="space-y-3 sm:space-y-4" novalidate>
                         <div>
-                            <label for="nome" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Seu Nome / Empresa</label>
-                            <input type="text" id="nome" name="nome" required autocomplete="name" class="w-full bg-brandNavy border border-brandGold/30 rounded p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Ex: João Silva (Empresa XYZ)">
+                            <label for="nome" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase mb-1">Seu Nome / Empresa</label>
+                            <input type="text" id="nome" name="nome" required autocomplete="name" class="w-full bg-brandNavy border border-brandGold/30 rounded p-2.5 sm:p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Ex: João Silva (Empresa XYZ)">
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                             <div>
-                                <label for="email" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Email</label>
-                                <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" class="w-full bg-brandNavy border border-brandGold/30 rounded p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Ex: joao@empresa.com">
+                                <label for="email" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase mb-1">Email</label>
+                                <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" class="w-full bg-brandNavy border border-brandGold/30 rounded p-2.5 sm:p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Ex: joao@empresa.com">
                             </div>
                             <div>
-                                <label for="telefone" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Telefone</label>
-                                <input type="tel" id="telefone" name="telefone" required autocomplete="tel" inputmode="tel" class="w-full bg-brandNavy border border-brandGold/30 rounded p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Ex: +244 9XX XXX XXX">
+                                <label for="telefone" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase mb-1">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" required autocomplete="tel" inputmode="tel" class="w-full bg-brandNavy border border-brandGold/30 rounded p-2.5 sm:p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Ex: +244 9XX XXX XXX">
                             </div>
                         </div>
                         <div>
-                            <label for="servico" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Serviço Pretendido</label>
-                            <select id="servico" name="servico" class="w-full bg-brandNavy border border-brandGold/30 rounded p-3 text-white focus:outline-none focus:border-brandGold text-sm">
+                            <label for="servico" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase mb-1">Serviço Pretendido</label>
+                            <select id="servico" name="servico" class="w-full bg-brandNavy border border-brandGold/30 rounded p-2.5 sm:p-3 text-white focus:outline-none focus:border-brandGold text-sm">
                                 <option value="Consultoria de TI">Consultoria de TI</option>
                                 <option value="Desenvolvimento Web">Desenvolvimento Web</option>
                                 <option value="Segurança Digital">Segurança Digital / Auditoria</option>
@@ -1150,12 +1168,11 @@
                             </select>
                         </div>
                         <div>
-                            <label for="mensagem" class="block text-xs font-semibold text-slate-300 uppercase mb-1">Mensagem</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" required class="w-full bg-brandNavy border border-brandGold/30 rounded p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Descreva sucintamente o seu projeto..."></textarea>
+                            <label for="mensagem" class="block text-[11px] sm:text-xs font-semibold text-slate-300 uppercase mb-1">Mensagem</label>
+                            <textarea id="mensagem" name="mensagem" rows="3" required class="w-full bg-brandNavy border border-brandGold/30 rounded p-2.5 sm:p-3 text-white placeholder-slate-500 focus:outline-none focus:border-brandGold text-sm" placeholder="Descreva sucintamente o seu projeto..."></textarea>
                         </div>
-                        <!-- Honeypot anti-spam -->
                         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-                        <button type="submit" class="w-full btn-shimmer gold-gradient-bg text-brandNavy font-extrabold py-3 rounded text-xs uppercase tracking-wider shadow-lg hover:shadow-gold-glow transition-all flex items-center justify-center gap-2 leading-none">
+                        <button type="submit" class="w-full btn-shimmer gold-gradient-bg text-brandNavy font-extrabold py-2.5 sm:py-3 rounded text-xs uppercase tracking-wider shadow-lg hover:shadow-gold-glow transition-all flex items-center justify-center gap-2 leading-none">
                             <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
                             <span>Enviar via WhatsApp</span>
                         </button>
@@ -1167,32 +1184,36 @@
     </section>
 
     <!-- RODAPÉ -->
-    <footer class="bg-brandNavyDark text-slate-400 py-10 border-t border-brandGold/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div>
+    <footer class="bg-brandNavyDark text-slate-400 py-8 sm:py-10 border-t border-brandGold/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Topo: nome + copyright -->
+            <div class="text-center mb-6">
                 <span class="font-serif-custom text-lg font-bold text-white block">YANNIK MATEUS</span>
                 <p class="text-xs text-slate-400 mt-1">© 2026 Yannik Alberto Constantino Mateus. Todos os direitos reservados.</p>
-                <p class="text-[11px] text-slate-500 mt-1">
-                    <a href="privacidade.html" class="hover:text-brandGold transition-colors">Política de Privacidade</a> · 
+                <p class="text-[11px] text-slate-500 mt-2">
+                    <a href="privacidade.html" class="hover:text-brandGold transition-colors">Política de Privacidade</a>
+                    <span class="mx-1">·</span>
                     <a href="termos.html" class="hover:text-brandGold transition-colors">Termos de Uso</a>
                 </p>
             </div>
 
-            <div class="flex space-x-6 text-xs">
-                <a href="#home" class="hover:text-brandGold transition-colors">Home</a>
-                <a href="#sobre" class="hover:text-brandGold transition-colors">Sobre</a>
-                <a href="#servicos" class="hover:text-brandGold transition-colors">Serviços</a>
-                <a href="#pacotes" class="hover:text-brandGold transition-colors">Pacotes</a>
-                <a href="#portfolio" class="hover:text-brandGold transition-colors">Portfólio</a>
-                <a href="#faq" class="hover:text-brandGold transition-colors">FAQ</a>
-                <a href="#contacto" class="hover:text-brandGold transition-colors">Contacto</a>
+            <!-- Navegação em grid (mobile-friendly) -->
+            <div class="grid grid-cols-3 sm:grid-cols-7 gap-3 text-xs mb-6 text-center max-w-md sm:max-w-none mx-auto">
+                <a href="#home" class="hover:text-brandGold transition-colors py-1">Home</a>
+                <a href="#sobre" class="hover:text-brandGold transition-colors py-1">Sobre</a>
+                <a href="#servicos" class="hover:text-brandGold transition-colors py-1">Serviços</a>
+                <a href="#pacotes" class="hover:text-brandGold transition-colors py-1">Pacotes</a>
+                <a href="#portfolio" class="hover:text-brandGold transition-colors py-1">Portfólio</a>
+                <a href="#faq" class="hover:text-brandGold transition-colors py-1">FAQ</a>
+                <a href="#contacto" class="hover:text-brandGold transition-colors py-1">Contacto</a>
             </div>
 
-            <div class="flex items-center space-x-4">
-                <a href="https://wa.me/244923529486" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-9 h-9 rounded-full bg-white/5 border border-brandGold/20 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold transition-colors">
+            <!-- Redes sociais -->
+            <div class="flex items-center justify-center gap-4">
+                <a href="https://wa.me/244923529486" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 rounded-full bg-white/5 border border-brandGold/20 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold transition-colors">
                     <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
                 </a>
-                <a href="mailto:consultor.yacm@gmail.com" aria-label="Email" class="w-9 h-9 rounded-full bg-white/5 border border-brandGold/20 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold transition-colors">
+                <a href="mailto:consultor.yacm@gmail.com" aria-label="Email" class="w-10 h-10 rounded-full bg-white/5 border border-brandGold/20 flex items-center justify-center text-slate-300 hover:text-brandGold hover:border-brandGold transition-colors">
                     <i class="fa-solid fa-envelope" aria-hidden="true"></i>
                 </a>
             </div>
